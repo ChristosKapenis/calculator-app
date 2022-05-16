@@ -32,7 +32,7 @@ public class CalculatorFrame extends JFrame {
     }
 
     private void initComponents() {
-        NumberBtnHandler numbersBtnHandler = new NumberBtnHandler();
+        NumberBtnHandler numberBtnHandler = new NumberBtnHandler();
         OperatorBtnHandler operatorBtnHandler = new OperatorBtnHandler();
         OtherBtnHandler otherBtnHandler = new OtherBtnHandler();
 
@@ -51,7 +51,7 @@ public class CalculatorFrame extends JFrame {
         };
 
         for (JButton btn : numbersBtn) {
-            btn.addActionListener(numbersBtnHandler);
+            btn.addActionListener(numberBtnHandler);
             this.add(btn);
         }
 
