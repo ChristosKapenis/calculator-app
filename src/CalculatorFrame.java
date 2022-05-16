@@ -11,6 +11,7 @@ public class CalculatorFrame extends JFrame {
     private JTextField resultTextField;
 
     public CalculatorFrame(int width, int height, int locationX, int locationY, String title) {
+        operator = "";
         currentNum = "";
         previousNum = "";
         this.initUI(width, height, locationX, locationY, title);
@@ -92,7 +93,7 @@ public class CalculatorFrame extends JFrame {
     }
 
     private void calculate() {
-        if (currentNum.isBlank()) return;
+        if (currentNum.isBlank() || operator.isBlank()) return;
 
         double num1 = Double.parseDouble(previousNum);
         double num2 = Double.parseDouble(currentNum);
@@ -139,10 +140,10 @@ public class CalculatorFrame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             JButton selected = (JButton) e.getSource();
-            operator = selected.getText();
             if (!previousNum.isBlank() && !currentNum.isBlank()) {
                 calculate();
             }
+            operator = selected.getText();
         }
     }
 
