@@ -36,7 +36,7 @@ public class CalculatorFrame extends JFrame {
         OperatorBtnHandler operatorBtnHandler = new OperatorBtnHandler();
         OtherBtnHandler otherBtnHandler = new OtherBtnHandler();
 
-        //Initialize buttons with action listeners & add them to calculator frame
+        //Initialize buttons with action listeners & add them to calculator frame (this)
         numbersBtn = new JButton[]{
                 new JButton("1"),
                 new JButton("2"),
