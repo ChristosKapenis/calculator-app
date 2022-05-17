@@ -47,7 +47,8 @@ public class CalculatorFrame extends JFrame {
                 new JButton("7"),
                 new JButton("8"),
                 new JButton("9"),
-                new JButton("0")
+                new JButton("0"),
+                new JButton(".")
         };
 
         for (JButton btn : numbersBtn) {
@@ -124,14 +125,14 @@ public class CalculatorFrame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             String numText = ((JButton) e.getSource()).getText();
-            if (previousNum.isBlank()) {
-                previousNum = numText;
+            if (operator.isBlank()) {
+                previousNum = previousNum + numText;
+                resultTextField.setText(previousNum);
             }
-            else if (currentNum.isBlank()) {
-                currentNum = numText;
+            else {
+                currentNum = currentNum + numText;
+                resultTextField.setText(currentNum);
             }
-
-            resultTextField.setText(numText);
         }
     }
 
